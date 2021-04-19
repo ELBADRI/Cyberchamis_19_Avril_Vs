@@ -5,28 +5,47 @@
   <label>
     Projet intégrateur
   </label>
+  <label *ngFor="let user of this.users" >
+    {{user.name}}
+  </label>
   <label class="spacer"></label>
-  <mat-icon [matMenuTriggerFor]="menuConnect">
+  <mat-icon   [matMenuTriggerFor]="menuConnect">
     account_circle
   </mat-icon>
-  <mat-menu #menuConnect="matMenu">
-    <button mat-menu-item>
+
+
+  <mat-menu  #menuConnect="matMenu">
+    <button  mat-menu-item (click)="login()" >
       <img [src]="dataIconGoogle" width="24" height="24"/>
       &nbsp;
       <span>Compte Google</span>
     </button>
   </mat-menu>
-  <mat-menu #menuDisconnect="matMenu">
-    <button mat-menu-item>
+
+  <mat-menu  #menuDisconnect="matMenu" >
+    <button  mat-menu-item>
       <mat-icon>logout</mat-icon>
       <span>Déconnexion</span>
     </button>
   </mat-menu>
+
+
+
+
 </mat-toolbar>
 
+
+<app-edit-defi></app-edit-defi>
 <mat-drawer-container class="example-container">
+  
   <mat-drawer #drawer [mode]="mode.value">
-    Placez votre menu ici...
+    
+   
+    <mat-option class="red" routerLink="/chamis"  >Chamis component </mat-option>
+        <mat-option routerLink="/defis" >Defis component</mat-option>
+        
+   
+
   </mat-drawer>
   <mat-drawer-content>
     <mat-form-field>
@@ -52,3 +71,4 @@
 
   </mat-drawer-content>
 </mat-drawer-container>
+<router-outlet></router-outlet>

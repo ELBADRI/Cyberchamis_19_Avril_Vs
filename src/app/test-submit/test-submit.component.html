@@ -1,0 +1,20 @@
+
+<h1>{{arret}}</h1>
+<form #myform="ngForm" (ngSubmit)="edittitre()"  action="/action_page.php">
+  <label for="fname">arret</label>
+  <input style="border-color: hotpink;" #premierinput="ngModel"  [class.is-invalid]="premierinput.invalid && premierinput.touched"  [(ngModel)]="arret.Arret" name="x" type="text">
+  <span *ngIf="true"> ATTENTION untouched-{{premierinput.touched}}dirty-{{premierinput.pristine}}valid-{{premierinput.valid}}</span>
+  <label for="fname">code</label>   
+  <input #deux="ngModel"  [(ngModel)]="arret.Codearret" name="y" type="text">
+  <span *ngIf="[deux.touched]"> ATTENTION {{deux.valid}}</span>
+
+  <label for="fname">map</label>
+  <input  name="z" type="text">
+  <span > ATTENTION {{deux.valid}}</span>
+
+  <input [disabled]="myform.invalid"  type="submit" value="Submit">
+</form> 
+
+
+
+

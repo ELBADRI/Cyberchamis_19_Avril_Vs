@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "frontend-3631a": {
+      "hosting": {
+        "amorce-client": [
+          "frontend-3631a"
+        ]
+      }
+    }
+  }
+}
