@@ -25,6 +25,14 @@ export class DefisService {
   }
 
 
+
+  creationDefi(defi: Defis): Observable<Defis> {
+
+ 
+    return this.http.post<Defis>(this.url,defi);
+  }
+
+
   
 
 

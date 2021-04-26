@@ -25,4 +25,11 @@ export class QuestionService {
     return this.http.put<Question>(this.url,question);
   }
 
+  creationQuestion(question: Question): Observable<Question> {
+
+    
+    
+    return this.http.post<Question>(this.url,question);
+  }
+
 }

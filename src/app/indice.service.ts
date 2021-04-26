@@ -26,6 +26,16 @@ export class IndiceService {
 
 
 
+  creationIndice(indice: Indice): Observable<Indice> {
+
+   
+
+    
+    
+    
+    return this.http.post<Indice>(this.url, indice);
+  }
+
 
 
 }

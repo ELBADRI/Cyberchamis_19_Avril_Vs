@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
   u: any;
   public users:User[]=[];
   public names=["hana","jason","ibrahim"];
+  public page:number=0;
 
   dataIconGoogle = 'assets/images/iconGoogle.png';
   iconMarker = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Map_marker.svg/585px-Map_marker.svg.png';
@@ -103,7 +104,10 @@ export class AppComponent implements OnInit {
       } 
 
    
+setPage(p:number){
+this.page=p;
 
+}
 
    
 

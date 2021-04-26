@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Arret } from 'src/environments/Arret';
 import { Defis } from 'src/environments/Defis';
 import { ArretService } from '../arret.service';
@@ -17,9 +17,12 @@ import { Indice } from 'src/environments/Indice';
 })
 export class EditDefiComponent implements OnInit {
   @Input() defiId: string ="";
+  @Input() public parentData=0;
+  @Output() Page: EventEmitter<number> = new EventEmitter();
+
 
   public defiedit: Defis={ 
-    Id:"gfgf",
+    Id:"",
     Titre :"",
     Datedecreation : new Date() ,
     Description :"",
@@ -27,11 +30,11 @@ export class EditDefiComponent implements OnInit {
     Type  :"",
     Auteur :"",
     Arret :"",
-    Codearret :"bvb",
+    Codearret :"",
     Motscles  :"",
     Duree :"",
     Prologue :"",
-    Points :5,
+    Points :1,
     Epilogue:"",
 commentaires:"",};
   public arrets:Arret[]=[];
@@ -57,23 +60,69 @@ commentaires:"",};
   }
 
   editdefi(){
-//********mise à jour de code d'arret ************
 
+
+
+    for (let i = 0; i < this.questions.length; i++) {
+      let description = document.querySelector('#a' + i) as HTMLInputElement;
+
+      let secrets = document.querySelector('#b' + i) as HTMLInputElement;
+      let points = document.querySelector('#c' + i) as HTMLInputElement;
+      this.questions[i].Description=description.value;
+      this.questions[i].Secrets=secrets.value;
+      this.questions[i].points=Number(points.value);
+      //update question dans la base de données
+      this.questionservice.updateQuestion(this.questions[i]);
+      //------------
+
+    }
+
+    for (let x = 0; x < this.indices.length; x++) {
+      let descriptionIndice = document.querySelector('#i' + x) as HTMLInputElement;
+      let pointsIndice = document.querySelector('#v' + x) as HTMLInputElement;
+      this.indices[x].Description=descriptionIndice.value;
+      this.indices[x].points=Number(pointsIndice.value);
+      this.indiceservice.updateIndice(this.indices[x]);
+                                                             }
+
+   // this.parentData=0;
+//********mise à jour de code d'arret ************
+  for (let index = 0; index < this.arrets.length; index++) {
+        if(this.arrets[index].Arret==this.defiedit.Arret){
+          this.defiedit.Codearret=this.arrets[index].Codearret;
+        }
+      }
+
+//------------
+//associer l'Id reçu de la vu précédente
+this.defiedit.Id=this.defiId;
 //mise à jour de date de modification 
 this.defiedit.Datedemodification=new Date();
 
-for (let i = 0; i < this.indices.length; i++) {
-  this.indiceservice.updateIndice(this.indices[i])
-}
-for (let i = 0; i < this.questions.length; i++) 
-{
-
-this.questionservice.updateQuestion(this.questions[i])           }
                                                           
     this.defiservice.updateDefi(this.defiedit); 
 
+    console.log("le defi",this.defiedit)
+
+    for (let b = 0; b < this.questions.length; b++) {
+      console.log("les question",this.questions[b]);
+      console.log("les indices",this.indices[b]);
+
+      
+    }
+
+    console.log("fin de la méthode");
+
+
      //implementer la méthode Setstep() pour sortir de la vu
   
+  }
+
+
+  setPage(page:number){
+
+this.Page.emit(page);
+
   }
    
 }

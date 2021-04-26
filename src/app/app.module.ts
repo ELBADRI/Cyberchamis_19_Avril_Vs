@@ -22,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DefiDetailsComponent } from './defi-details/defi-details.component';
 import { EditDefiComponent } from './edit-defi/edit-defi.component';
 import { TestSubmitComponent } from './test-submit/test-submit.component';
+import { CreationDefiComponent } from './creation-defi/creation-defi.component';
+import { MesVisitesComponent } from './mes-visites/mes-visites.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { TestSubmitComponent } from './test-submit/test-submit.component';
     DefisComponent,
     DefiDetailsComponent,
     EditDefiComponent,
-    TestSubmitComponent
+    TestSubmitComponent,
+    CreationDefiComponent,
+    MesVisitesComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase) ,
