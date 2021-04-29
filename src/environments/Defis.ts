@@ -1,19 +1,21 @@
 export interface Defis  {
-  Id : string
-    Titre : string
-    Datedecreation : Date
-    Description :string
-    Datedemodification : Date
-    Type : string
-    Auteur : string
-    Arret : string
-    Codearret : string
-    Motscles  : string
-    Duree : string
-    Prologue :string
-    Points : number
-    Epilogue:string
-commentaires:string
+  id: string
+    titre?: string
+    datedecreation?: Date
+    datedemodification?: Date
+    description?:string
+   
+    type?: string
+   
+    arret: string
+    codearret?: string
+    auteur?: string
+    motscles ?: string
+    duree?: string
+  prologue?:string
+    points?: number
+    epilogue?:string
+commentaires?:string
 
     
     

@@ -1,9 +1,9 @@
 export interface Indice {
 
 
-   Id:string
-Label:number
-Description:string
+   id:string
+label:number
+description:string
 points:number
  
 }

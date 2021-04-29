@@ -11,25 +11,35 @@ export class QuestionService {
 
   constructor(private http: HttpClient) { }
 
-  url = "yy";
-  getQuestions(): Observable<Question[]> {
+  url = "http://localhost:5000/api/questions/";
+  getallQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>(this.url);
   }
-  getQuestionsById(Id: string): Observable<Question[]> {
-    let params = new HttpParams();
-    params.set("Id", Id);
-    return this.http.get<Question[]>(this.url+"?Id="+Id);
+  getQuestionsByIdDefi(IdDefi: string): Observable<Question[]> {
+    
+    return this.http.get<Question[]>(this.url+IdDefi);
+  }
+
+  getQuestionsByLabel(IdDefi: string,label:number): Observable<Question> {
+    
+    return this.http.get<Question>(this.url+IdDefi+"/"+label);
   }
 
   updateQuestion(question:Question) : Observable<Question> {
-    return this.http.put<Question>(this.url,question);
+    return this.http.put<Question>(this.url+question.id+"/"+question.label,question);
   }
 
   creationQuestion(question: Question): Observable<Question> {
 
     
     
-    return this.http.post<Question>(this.url,question);
+    return this.http.post<Question>(this.url+question.label,question);
   }
+
+
+  deleteQuestion(question:Question) : Observable<void> {
+    return this.http.delete<void>(this.url+question.id+"/"+question.label);
+  }
+
 
 }

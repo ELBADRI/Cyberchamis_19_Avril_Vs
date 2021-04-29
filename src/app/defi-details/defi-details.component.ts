@@ -10,17 +10,36 @@ import { DefisService } from '../defis.service';
 })
 export class DefiDetailsComponent implements OnInit {
 //je reçois le ID de défi ou le Defi complet de la vu precédent 
-@Input() defiId: string ="";
+//@Input()
+ defiId: string ="D151";
 @Output() Page: EventEmitter<number> = new EventEmitter();
 
-
-  public defi: any;
+defi!:Defis;
+/*public defi: Defis={ 
+  id:"",
+  titre :"",
+  datedecreation : new Date() ,
+  description :"",
+  datedemodification : new Date() ,
+  type  :"",
+  auteur :"",
+  arret :"",
+  codearret :"",
+  motscles  :"",
+  duree :"",
+  prologue :"",
+  points :1,
+  epilogue:"",
+commentaires:"",};*/
   constructor(private defiserver:DefisService) { }
 
 
   ngOnInit(): void {
 
-this.defiserver.getDefiById(this.defiId).subscribe((data=>this.defi=data))
+this.defiserver.getDefiByIdDefi(this.defiId).subscribe((data=>{this.defi=data;console.log(this.defi)}
+  
+  
+  ))
 
   }
 

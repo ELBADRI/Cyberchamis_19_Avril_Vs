@@ -10,18 +10,17 @@ export class DefisService {
 
   constructor(private http: HttpClient) { }
 
-  url = "/api/defis";
+  url = "http://localhost:5000/api/defis/";
   getDefis(): Observable<Defis[]> {
     return this.http.get<Defis[]>(this.url);
   }
-  getDefiById(Id: string): Observable<Defis> {
-    let params = new HttpParams();
-    params.set("Id", Id);
-    return this.http.get<Defis>(this.url+"?Id="+Id);
+  getDefiByIdDefi(IdDefi: string): Observable<Defis> {
+    
+    return this.http.get<Defis>(this.url+IdDefi);
   }
 
   updateDefi(defi:Defis) : Observable<Defis> {
-    return this.http.put<Defis>(this.url,defi);
+    return this.http.put<Defis>(this.url+defi.id,defi);
   }
 
 
@@ -29,7 +28,11 @@ export class DefisService {
   creationDefi(defi: Defis): Observable<Defis> {
 
  
-    return this.http.post<Defis>(this.url,defi);
+    return this.http.post<Defis>(this.url+defi.id,defi);
+  }
+
+  deleteDefi(defi:Defis) : Observable<void> {
+    return this.http.delete<void>(this.url+defi.id);
   }
 
 

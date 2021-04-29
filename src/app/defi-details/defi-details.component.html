@@ -3,27 +3,24 @@
     <div class="row">
         <div class="col-md-5">
 
-          
            
                 <a (click)="setPage(0)" href="#" class="btn btn-info btn-lg">
                   <span class="glyphicon glyphicon-arrow-left"></span> Retour
                 </a>
             <div class="project-info-box mt-0">
                 <h5>Description</h5>
-                <p class="mb-0">Vivamus pellentesque, felis in aliquam ullamcorper, lorem tortor porttitor erat, hendrerit porta nunc tellus eu lectus. Ut vel imperdiet est. Pellentesque condimentum, dui et blandit laoreet, quam nisi tincidunt tortor.</p>
+                <p class="mb-0">{{this.defi.description}}</p>
             </div><!-- / project-info-box -->
 
             <div class="project-info-box">
-                <p><b>Identifiant:</b> {{this.defi.DefiId}}</p> 
+                <p><b>Identifiant:</b> {{this.defi.id}}</p> 
             
-                <p><b>Titre:</b> {{this.defi.Titre}}</p>
-                <p><b>Type:</b> {{this.defi.Type}}</p>
-                <p><b>Auteur:</b> {{this.defi.Auteur}}</p>
-                <p><b>  Arrêt :</b> {{this.defi.Arret}}</p>
-                <p><b>Distanciel:</b> {{this.defi.Titre}}</p>
-                <p><b> Mots clés:</b> {{this.defi.Mots}}</p>
-                <p><b> Points</b> {{this.defi.Points}}</p>
-                <p><b> Durée :</b> {{this.defi.Duree}}</p>
+                <p><b>Titre:</b>{{this.defi.titre}}</p>
+                <p><b>Type:</b>{{this.defi.type}}</p>
+                <p><b>Auteur:</b>{{this.defi.auteur}}</p>
+                <p><b> Mots clés:</b>{{this.defi.motscles}}</p>
+                <p><b> Points</b> {{this.defi.points}}</p>
+                <p><b> Durée :</b> {{this.defi.duree}}</p>
 
 
             </div><!-- / project-info-box -->
@@ -34,8 +31,8 @@
         <div class="col-md-7">
             <img src="https://via.placeholder.com/400x300/FFB6C1/000000" alt="project-image" class="rounded">
             <div class="project-info-box">
-                <p><b>Date de création:</b> {{this.defi.DateCrEation}}</p>
-                <p><b> Date de modification :</b> {{this.defi.DateModification}}</p>
+                <p><b>Date de création:</b> {{this.defi.datedecreation}}</p>
+                <p><b> Date de modification :</b>{{this.defi.datedemodification}}</p>
             </div><!-- / project-info-box -->
         </div><!-- / column -->
     </div>

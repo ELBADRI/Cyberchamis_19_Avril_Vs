@@ -18,19 +18,19 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="inputContact1">Titre</label>
                                     <div class="col-sm-10">
-                                        <input matInput required [(ngModel)]="this.defiedit.Titre" name="Titre" class="form-control" id="inputContact1" type="text" >
+                                        <input  required [(ngModel)]="this.defiedit.titre" name="Titre" class="form-control" id="inputContact1" type="text" >
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="inputContact2">Type</label>
                                     <div class="col-sm-10">
-                                        <input required [(ngModel)]="this.defiedit.Type" name="Type" class="form-control" id="inputContact2"  >
+                                        <input required [(ngModel)]="this.defiedit.type" name="Type" class="form-control" id="inputContact2"  >
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="inputContact3">Auteur</label>
                                     <div class="col-sm-10">
-                                        <input required [(ngModel)]="this.defiedit.Auteur" name="Auteur" class="form-control" id="inputContact3" type="text">
+                                        <input required [(ngModel)]="this.defiedit.auteur" name="Auteur" class="form-control" id="inputContact3" type="text">
                                     </div>
                                 </div>
                                
@@ -39,23 +39,18 @@
                                 <div class="form-group">
                                     <p>  Mots clés</p>
                                     <div class="col-sm-10">
-                                        <input required [(ngModel)]="this.defiedit.Motscles" name="Mots" class="form-control" id="inputContact8" type="text" >
+                                        <input required [(ngModel)]="this.defiedit.motscles" name="Mots" class="form-control" id="inputContact8" type="text" >
 
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="inputContact8">Points</label>
-                                    <div class="col-sm-10">
-                                        <input required [(ngModel)]="this.defiedit.Points" name="Points" class="form-control" id="inputContact8" type="text" >
-                                    </div>
-                                </div>
+                            
 
 
                                 <div style="position: absolute;left: 50px;margin-top: -130px;">
                                     <label for="pet-select">Arret de transport</label>
     
                                   
-                                    <select [(ngModel)]="this.defiedit.Arret " name="Arret">
+                                    <select [(ngModel)]="this.defiedit.arret " name="Arret">
     
                                         <option  *ngFor="let ar of this.arrets" [ngValue]="ar">{{ar.Arret}}</option>
                                       </select>
@@ -64,7 +59,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="inputContact8">Durée</label>
                                     <div class="col-sm-10">
-                                        <input required [(ngModel)]="this.defiedit.Duree" name="Duree" class="form-control" id="inputContact8" type="text" >
+                                        <input required [(ngModel)]="this.defiedit.duree" name="Duree" class="form-control" id="inputContact8" type="text" >
                                     </div>
                                 </div>
 
@@ -74,7 +69,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="inputContact8">Epilogue</label>
                                     <div class="col-sm-10">
-                                        <input required [(ngModel)]="this.defiedit.Epilogue" name="Epilogue" class="form-control" id="inputContact8" type="text" >
+                                        <input required [(ngModel)]="this.defiedit.epilogue" name="Epilogue" class="form-control" id="inputContact8" type="text" >
                                     </div>
                                 </div>
 
@@ -82,7 +77,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="inputContact8">Description</label>
                                     <div class="col-sm-10">
-                                        <input required [(ngModel)]="this.defiedit.Description" name="description" class="form-control" id="inputContact8" type="text" >
+                                        <input required [(ngModel)]="this.defiedit.description" name="description" class="form-control" id="inputContact8" type="text" >
                                     </div>
                                 </div>
 
@@ -98,7 +93,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="inputContact8">Prologue</label>
                                     <div class="col-sm-10">
-                                        <input required [(ngModel)]="this.defiedit.Prologue" name="Prologue" class="form-control" id="inputContact8" type="text" >
+                                        <input required [(ngModel)]="this.defiedit.prologue" name="Prologue" class="form-control" id="inputContact8" type="text" >
                                     </div>
                                 </div>
 
@@ -120,7 +115,7 @@
                                         <label class="col-sm-2 control-label" for="inputContact8">Description</label>
 
                                         <div class="col-sm-10">
-                                            <input required id="{{'a'+j}}" name="{{'questionDescription'+j}}"
+                                            <input [(ngModel)]="q.description" required  name="{{'questionDescription'+j}}"
                                                 class="form-control" type="text">
                                         </div>
                                     </div>
@@ -130,7 +125,7 @@
                                         <label class="col-sm-2 control-label" for="inputContact8">Secrets</label>
 
                                         <div class="col-sm-10">
-                                            <input required id="{{'b'+j}}" name="{{'questionSecrets'+j}}"
+                                            <input [(ngModel)]="q.secrets" required  name="{{'questionSecrets'+j}}"
                                                 class="form-control" type="text">
                                         </div>
                                     </div>
@@ -141,7 +136,7 @@
 
 
                                         <div class="col-sm-10">
-                                            <input required id="{{'c'+j}}" name="{{'questionPoints'+j}}"
+                                            <input [(ngModel)]="q.points" required  name="{{'questionPoints'+j}}"
                                                 class="form-control" type="text">
                                         </div>
                                     </div>
@@ -156,7 +151,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label" for="inputContact8">Description</label>
                                         <div class="col-sm-10">
-                                            <input required id="{{'i'+x}}" name="indiceDesc" class="form-control"
+                                            <input [(ngModel)]="i.description" required  name="{{'i'+x}}" class="form-control"
                                                 type="text">
                                         </div>
                                     </div>
@@ -165,7 +160,7 @@
                                         <label class="col-sm-2 control-label" for="inputContact8">Points</label>
 
                                         <div class="col-sm-10">
-                                            <input required id="{{'v'+x}}" name="indicePoints" class="form-control"
+                                            <input [(ngModel)]="i.points" required  name="{{'b'+x}}" class="form-control"
                                                 type="text">
                                         </div>
                                     </div>
@@ -176,7 +171,7 @@
                            
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button [disabled]="myform.invalid || myform.untouched" type="submit"  style="color: rgb(20, 22, 20);" class="btn btn-info" >Validez</button>
+                                        <button [disabled]="myform.untouched" type="submit"  style="color: rgb(20, 22, 20);" class="btn btn-info" >Validez</button>
                                        <div style="position: absolute;left: 550px;top: 5px;"> <button (click)="setPage(0)"   style="color: rgb(20, 22, 20);" class="btn btn-info" >Annuler</button></div>
 
                                     </div>
